@@ -22,14 +22,6 @@ numeroReserva := unNroRes.
 numeroHabitacion := unNroHab.
 numeroCliente := unNroCliente.!
 
-initReservaIni:unaFechaIni Fin:unaFechaFin estadoRes:unEstado cantHuesp:unaCant numHab:unNroHab nroRes:unNroRes nroCliente:unNroCliente
-fechaInicio := unaFechaIni.
-fechaFin := unaFechaFin.
-estadoReserva := unEstado.
-cantidadHuesped := unaCant.
-numeroReserva := unNroRes.
-numeroHabitacion := unNroHab.
-numeroCliente := unNroCliente.!
 
 modiEstadoReserva:unEstado
 estadoReserva := unEstado.!
