@@ -26,3 +26,9 @@ verEstadoPago
 !Factura categoriesFor: #initFacturanroFactura:montoTotal:fechaEmision:estadoPago:nroReserva:!public! !
 !Factura categoriesFor: #verEstadoPago!public! !
 
+!Factura class methodsFor!
+
+crearFacturanroFactura:numeroF montoTotal:monto fechaEmision:fecha estadoPago:estado nroReserva:numeroR
+^(self new) initFacturanroFactura:numeroF montoTotal:monto fechaEmision:fecha estadoPago:estado nroReserva:numeroR.! !
+!Factura class categoriesFor: #crearFacturanroFactura:montoTotal:fechaEmision:estadoPago:nroReserva:!public! !
+
