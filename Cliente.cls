@@ -29,3 +29,9 @@ verTelefono
 !Cliente categoriesFor: #verDireccion!public! !
 !Cliente categoriesFor: #verTelefono!public! !
 
+!Cliente class methodsFor!
+
+crearClienteNombre: unNombre apellido: unApellido direccion:unaDireccion telefono: unTelefono correo: unCorreo
+^(self new) initClientDireccion: unaDireccion correo: unCorreo telefono: unTelefono nombre: unNombre apellido: unApellido.! !
+!Cliente class categoriesFor: #crearClienteNombre:apellido:direccion:telefono:correo:!public! !
+
