@@ -23,3 +23,9 @@ verNombre
 !Persona categoriesFor: #verApellido!public! !
 !Persona categoriesFor: #verNombre!public! !
 
+!Persona class methodsFor!
+
+crearPersonaNombre: unNombre apellido: unApellido
+^(self new) initPersonaNombre: unNombre apellido: unApellido.! !
+!Persona class categoriesFor: #crearPersonaNombre:apellido:!public! !
+
