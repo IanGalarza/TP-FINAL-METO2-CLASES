@@ -10,25 +10,11 @@ Factura comment: ''!
 !Factura categoriesForClass!Kernel-Objects! !
 !Factura methodsFor!
 
-CalcularMontoTotal
-^ montoTotal.!
-
 initFacturanroFactura:numeroF montoTotal:monto fechaEmision:fecha estadoPago:estado nroReserva:numeroR
 nroFactura:=numeroF.
 montoTotal:=monto.
 fechaEmision:=fecha.
 estadoPago:=estado.
-nroReserva:=numeroR.!
-
-verEstadoPago
-^ estadoPago.! !
-!Factura categoriesFor: #CalcularMontoTotal!public! !
+nroReserva:=numeroR.! !
 !Factura categoriesFor: #initFacturanroFactura:montoTotal:fechaEmision:estadoPago:nroReserva:!public! !
-!Factura categoriesFor: #verEstadoPago!public! !
-
-!Factura class methodsFor!
-
-crearFacturanroFactura:numeroF montoTotal:monto fechaEmision:fecha estadoPago:estado nroReserva:numeroR
-^(self new) initFacturanroFactura:numeroF montoTotal:monto fechaEmision:fecha estadoPago:estado nroReserva:numeroR.! !
-!Factura class categoriesFor: #crearFacturanroFactura:montoTotal:fechaEmision:estadoPago:nroReserva:!public! !
 
