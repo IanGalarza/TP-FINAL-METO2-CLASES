@@ -33,6 +33,9 @@ buscarHabitacionDisponibleTipo: unTipo
     ^ habitaciones detect: [:hab | (hab verEstado = true and: [hab verTipo = unTipo])] ifNone: [nil].
 !
 
+buscarHabitacionPorNumero: unNum
+^ habitaciones detect: [:hab | hab verNroHab = unNum] ifNone: [nil].!
+
 cantidadAreas
 ^ areas size.!
 
@@ -132,6 +135,14 @@ recuperarReserva: Pos
 recuperarServicio: Pos
 ^ servicios at: Pos.!
 
+reservasVigentes
+|fechaActual col|
+fechaActual := Date today.
+col := self todasLasReservas.
+
+^col select: [:reserva | reserva esVigente: fechaActual ]. 
+!
+
 todasLasAreas
 ^ areas.!
 
@@ -153,6 +164,14 @@ verCalificacion
 verDireccion
 ^direccion.!
 
+verHabitacionesPorTipo: unTipo
+| listaHabitaciones |
+listaHabitaciones := self todasLasHabitaciones.
+^ listaHabitaciones detect: [:habitacion | habitacion verTipo = unTipo] ifNone: [nil].
+
+
+	!
+
 verNombre
 ^nombre.!
 
@@ -166,6 +185,7 @@ verTelefono
 !Hotel categoriesFor: #agregarServicio:!public! !
 !Hotel categoriesFor: #buscarCliente:!public! !
 !Hotel categoriesFor: #buscarHabitacionDisponibleTipo:!public! !
+!Hotel categoriesFor: #buscarHabitacionPorNumero:!public! !
 !Hotel categoriesFor: #cantidadAreas!public! !
 !Hotel categoriesFor: #cantidadClientes!public! !
 !Hotel categoriesFor: #cantidadHabitaciones!public! !
@@ -196,6 +216,7 @@ verTelefono
 !Hotel categoriesFor: #recuperarHabitacion:!public! !
 !Hotel categoriesFor: #recuperarReserva:!public! !
 !Hotel categoriesFor: #recuperarServicio:!public! !
+!Hotel categoriesFor: #reservasVigentes!public! !
 !Hotel categoriesFor: #todasLasAreas!public! !
 !Hotel categoriesFor: #todasLasHabitaciones!public! !
 !Hotel categoriesFor: #todasLasReservas!public! !
@@ -203,6 +224,7 @@ verTelefono
 !Hotel categoriesFor: #todosLosServicios!public! !
 !Hotel categoriesFor: #verCalificacion!public! !
 !Hotel categoriesFor: #verDireccion!public! !
+!Hotel categoriesFor: #verHabitacionesPorTipo:!public! !
 !Hotel categoriesFor: #verNombre!public! !
 !Hotel categoriesFor: #verTelefono!public! !
 
