@@ -54,10 +54,12 @@ Transcript show: '5. Ver las habitaciones ocupadas.'; cr.
 Transcript show: '6. Mostrar cantidad de reservas por cantidad de huespedes'; cr.
 Transcript show: '7. Ver todas las habitaciones.'; cr.
 Transcript show: '8. Ver todos los clientes.'; cr.
-Transcript show: '9. Salir del programa'; cr.
+Transcript show: '9. Ver todas las reservas ordenadas por fecha.'; cr.
+Transcript show: '10. Modificar el estado de las habitaciones ocupadas que no se encuentren en reservas vigentes.'; cr.
+Transcript show: '0. Salir del programa.'; cr.
 Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
 
-op:= (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema:  ') asNumber.
+op:= (Prompter prompt: ' Ingrese una opcion o 0 para salir del sistema:  ') asNumber.
 [op ~= 0] whileTrue: [
 	(op = 1) ifTrue: [ nroHab:= (Prompter prompt: 'Ingrese el Numero de Habitacion: ') asNumber.
 					tip:= Prompter prompt: 'Ingrese el tipo de Habitacion: '.
@@ -247,7 +249,7 @@ op:= (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema:  ') asNu
 					Transcript show: '----------------------------------------------------------------------------------------------------'; cr.]].
 	(op = 10) ifTrue: [
 				"Obtengo todas las reservas"
-				col1 := hotel todasLasReservas.
+				col := hotel todasLasReservas.
 				"Obtengo las reservas vigentes."
 				col2 := hotel reservasVigentes.
 				"Obtengo la fecha actual."
@@ -262,7 +264,7 @@ op:= (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema:  ') asNu
 					"Verifico que la habitacion no este en alguna reserva vigente."
 					(col2 detect: [:reserva | reserva verNumeroHabitacion  = nroHab] ifNone: [nil]) isNil ifTrue: [
 						habitacion modiEstado: true.
-						Transcript show: 'Habitacion ', nroHab printString, ' marcadada como disponible.'; cr.]
+						Transcript show: 'Habitacion ', nroHab printString, ' marcada como disponible.'; cr.]
 				].
 					
 	].
@@ -270,7 +272,7 @@ op:= (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema:  ') asNu
 
 
 	"Pregunta por opcion o cerrar el menu"
-	op := (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema: ') asNumber.
+	op := (Prompter prompt: ' Ingrese una opcion o 0 para salir del sistema: ') asNumber.
 
 	"Una vez seleccionado una opcion, limpio el menu previo e informacion previa"
 	Transcript clear.
@@ -284,7 +286,7 @@ op:= (Prompter prompt: ' Ingrese una opcion o 9 para salir del sistema:  ') asNu
 	Transcript show: '7. Ver todas las habitaciones.'; cr.
 	Transcript show: '8. Ver todos los clientes.'; cr.
 	Transcript show: '9. Ver todas las reservas ordenadas por fecha.'; cr.
-	ranscript show: '10. Modificar el estado de las habitaciones ocupadas que no se encuentren en reservas vigentes..'; cr.
+	Transcript show: '10. Modificar el estado de las habitaciones ocupadas que no se encuentren en reservas vigentes..'; cr.
 	Transcript show: '0. Salir del programa'; cr.
 	Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
 	].
