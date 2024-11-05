@@ -18,6 +18,7 @@ hotel agregarHabitacion: habitacionPreCarga.
 habitacionPreCarga := Habitacion crearHabitacionNro: 106 tipo: 'Individual' precioPorNoche: 1500.
 hotel agregarHabitacion: habitacionPreCarga.
 habitacionPreCarga := Habitacion crearHabitacionNro: 107 tipo: 'Suite' precioPorNoche: 1500.
+habitacionPreCarga modiEstado: false.
 hotel agregarHabitacion: habitacionPreCarga.
 
 
@@ -306,7 +307,25 @@ op:= (Prompter prompt: ' Ingrese una opcion o 0 para salir del sistema:  ') asNu
 				].
 					Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
 	].
+	(op = 13) ifTrue: [|aumento cambiarHabitacion|
+				aumento := 1.05.
+				col := hotel todasLasHabitaciones.
 				
+				actualizaciones := col reject: [:habitacion | habitacion verEstado = false].
+				diccionario := Dictionary new.
+
+				actualizaciones do: [:habitacion | diccionario at: habitacion verNroHab put:(habitacion verPrecioPorNoche*aumento).].
+
+					diccionario keysAndValuesDo: [:nroHabitacion :costoHabitacion | 
+					cambiarHabitacion := hotel buscarHabitacionPorNumero: nroHabitacion.
+					cambiarHabitacion modiprecioPorNoche: costoHabitacion.
+					Transcript show: 'El nuevo precio de la habitacion: '.
+					Transcript show: nroHabitacion printString.
+					Transcript show: ' es de: '.
+					Transcript show: costoHabitacion printString; cr.
+					Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
+				]. 
+	].
 
 	
 		
@@ -328,6 +347,7 @@ op:= (Prompter prompt: ' Ingrese una opcion o 0 para salir del sistema:  ') asNu
 	Transcript show: '10. Modificar el estado de las habitaciones ocupadas que no se encuentren en reservas vigentes..'; cr.
 	Transcript show: '11. Ver habitaciones ordenadas.'; cr.
 	Transcript show: '12. Ver cantidad de reservas por cliente.'; cr.
+	Transcript show: '13. Actualizar coste de las Habitaciones (Ejecutar la opcion 10 anteriormente, si se desea).'; cr.
 	Transcript show: '0. Salir del programa'; cr.
 	Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
 ].
