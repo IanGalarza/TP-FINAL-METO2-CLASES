@@ -32,14 +32,14 @@ hotel agregarCliente: clientePreCarga.
 clientePreCarga := Cliente crearClienteNombre: 'Pedro' apellido: 'Díaz' direccion: 'Calle Belgrano 2020' telefono: '223 1122334' correo: 'pedro.diaz@example.com' nroCliente: 05.
 hotel agregarCliente: clientePreCarga.
 
-clientePreCarga:= Reserva crearReservaIni: '28/6/2024' Fin:  '7/7/2024'  cantHuesp: 1 numHab: 101 nroRes: 2 nroCliente: 2.
-hotel agregarReserva: clientePreCarga.
-clientePreCarga:= Reserva crearReservaIni: '29/6/2024' Fin:  '8/7/2024'  cantHuesp: 1 numHab: 102 nroRes: 1 nroCliente: 1.
-hotel agregarReserva: clientePreCarga.
-clientePreCarga:= Reserva crearReservaIni: '10/6/2024' Fin:  '1/7/2024'  cantHuesp: 2 numHab: 103 nroRes: 3 nroCliente: 3.
-hotel agregarReserva: clientePreCarga.
-clientePreCarga:= Reserva crearReservaIni: '11/6/2024' Fin:  '2/7/2024'  cantHuesp: 2 numHab: 104 nroRes: 4 nroCliente: 3.
-hotel agregarReserva: clientePreCarga.
+reservaPreCarga := Reserva crearReservaIni: '28/6/2024' Fin:  '7/7/2024'  cantHuesp: 1 numHab: 101 nroRes: 2 nroCliente: 2.
+hotel agregarReserva: reservaPreCarga.
+reservaPreCarga := Reserva crearReservaIni: '29/6/2024' Fin:  '8/7/2024'  cantHuesp: 1 numHab: 102 nroRes: 1 nroCliente: 1.
+hotel agregarReserva: reservaPreCarga.
+reservaPreCarga := Reserva crearReservaIni: '10/6/2024' Fin:  '1/7/2024'  cantHuesp: 2 numHab: 103 nroRes: 3 nroCliente: 3.
+hotel agregarReserva: reservaPreCarga.
+reservaPreCarga := Reserva crearReservaIni: '11/6/2024' Fin:  '2/7/2024'  cantHuesp: 2 numHab: 104 nroRes: 4 nroCliente: 3.
+hotel agregarReserva: reservaPreCarga.
 
 
 "Prueba Menu con aplicacion funcional"
@@ -326,10 +326,11 @@ op:= (Prompter prompt: ' Ingrese una opcion o 0 para salir del sistema:  ') asNu
 	Transcript show: '8. Ver todos los clientes.'; cr.
 	Transcript show: '9. Ver todas las reservas ordenadas por fecha.'; cr.
 	Transcript show: '10. Modificar el estado de las habitaciones ocupadas que no se encuentren en reservas vigentes..'; cr.
-	Transcript show: '11. Yo.'; cr.
+	Transcript show: '11. Ver habitaciones ordenadas.'; cr.
+	Transcript show: '12. Ver cantidad de reservas por cliente.'; cr.
 	Transcript show: '0. Salir del programa'; cr.
 	Transcript show: '----------------------------------------------------------------------------------------------------'; cr.
-	].
+].
 					
 					
 					
